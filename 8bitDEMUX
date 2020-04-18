@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+ 
+entity DEMUX is
+ port(
+ 
+     G: in STD_LOGIC_VECTOR(7 downto 0);
+     S: in STD_LOGIC_VECTOR(1 downto 0);
+     A,B,C,D: out STD_LOGIC_VECTOR(7 downto 0)
+  );
+end DEMUX;
+ 
+architecture behv of DEMUX is
+begin
+process (G,S) is
+begin
+  if (S ="00") then
+      A <= G;
+  elsif (S ="01") then
+      B <= G;
+  elsif (S="10") then
+      C <= G;
+  else
+      D <= G;
+  end if;
+ 
+end process;
+end behv;
